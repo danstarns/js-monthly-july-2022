@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import fs from "fs";
 import path from "path";
 import crypto from "crypto";
@@ -8,6 +9,7 @@ const PORT = 4000;
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 app.get("/todos", async (req, res) => {
   const todos = await fs.promises.readFile(TODO_FILE, "utf-8");
