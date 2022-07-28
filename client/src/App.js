@@ -28,7 +28,7 @@ function Todo({ todo, commentOnTodo }) {
 
       <div className="m-5">
         <div className="d-flex flex-col space-y-5">
-          {todo.comments.map((comment) => (
+          {(todo.comments || []).map((comment) => (
             <Comment key={comment.id} comment={comment}></Comment>
           ))}
         </div>
